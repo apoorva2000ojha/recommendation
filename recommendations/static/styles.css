@@ -1,0 +1,515 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: var(--light);
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+
+header {
+    padding: 20px 20px 0 20px;
+    position: fixed;
+    top: -10px;
+    display: grid;  
+    grid-gap:5px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+     "nt mn mn sb . . . "; 
+    background-color: #111;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+    color: #fff;
+    height: 45px;
+  }
+  
+  .netflixLogo {
+    grid-area: nt;
+    object-fit: cover;
+    width: 200px;
+    max-height: 100%;
+    padding-left: 30px;
+    padding-top: 0px; 
+    margin-top: 10px; 
+  }
+  
+  .netflixLogo img {  
+    height: 250px;  
+     margin-top: -110px;   
+  }
+  
+  #logo {
+    color: #E50914;   
+    padding: 0; 
+  }
+  
+  
+  .main-nav {
+    grid-area: mn;
+    padding: 0 30px 0 0px;
+    margin-top: 10px;
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;  
+    font-size: 25px;
+  }
+  
+  .main-nav a:hover {
+    color: gray;
+  }
+  
+  .sub-nav {
+    grid-area: sb;
+    padding: 0 40px 0 40px;
+  }
+  
+  .sub-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+  }
+  
+  .sub-nav a:hover {
+    color: gray;
+  }
+.main_heading {
+    margin-top: 11vh;
+    padding: 20px, 20px, 0px, 0px;
+    color: white;
+    font-size: 3rem;
+    font-weight: 400;
+    padding-bottom: 0.3rem;
+    text-align: center;
+}
+
+#movie_name {
+    margin-top: 1vh;
+    padding: 20px, 20px, 0px, 0px;
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    padding-bottom: 0.3rem;
+    text-align: center;
+}
+
+#poster {
+    margin-top: 3vh;
+    position: absolute;
+    max-width: 45%;
+    height: 200px;
+    top: 20%;
+    left: 35%;
+    overflow: visible;
+    align-self: center;
+}
+
+#poster p {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.img-responsive {
+    margin-top: 50px;
+    width: 30vw;
+    max-height: 350px;
+    border-radius: 5px;
+    align-items: center;
+  }
+
+#rating {
+    float: center;
+    width: 5 rem;
+    margin-left: 40vwpx;
+    margin-top: -7vh;
+}
+
+.txt-center {
+    text-align: center;
+    margin-top: -15vh;
+}
+
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+
+#rating {
+    margin-top: 500px;
+    margin-left: 30vw;
+    width: 300px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+    height: 20px;
+}
+
+#rating>label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 10px;
+    margin-left: 30px;
+    position: relative;
+    width: 1.1rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 40px;
+}
+
+#rating>label:hover,
+#rating>label:hover~label,
+#rating>input.radio-btn:checked~label {
+    color: transparent;
+}
+
+#rating>label:hover:before,
+#rating>label:hover~label:before,
+#rating>input.radio-btn:checked~label:before,
+#rating>input.radio-btn:checked~label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+
+.options {
+    align-items: center;
+}
+
+#submit_rating {
+    margin-top: 1.5vh;
+    margin-left: 30vw;
+    margin-right: 40vw;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    border-radius: 0.2vw;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-right: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(51, 51, 51, 0.5);
+    white-space: nowrap;
+    margin-bottom: 20px;
+   
+}
+
+#skip {
+    margin-top: 1.5vh;
+    margin-left: 55vw;
+    margin-right: 37vw;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    border-radius: 0.2vw;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(51, 51, 51, 0.5);
+    white-space: nowrap
+}
+
+.main-container {
+    padding: 30px;
+}
+
+#myList {
+    color: #fff;
+    font-size: 30px;
+    margin: 20px, 0px, 0px, 20px;
+}
+
+#recommendations_box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+#recommendations_box div {
+    transition: transform .3s;
+}
+
+#recommendations_box div:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+#recommendations_box div {
+    border-radius: 2px;
+}
+
+#recommendations {
+    width: 50px;
+    height: 120px;
+    margin-top: 10px;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--dark);
+    margin-top: 10vh;
+    bottom: 0%;
+    align-items: center;
+    background-color: #111;
+    width: 100%;
+    height: 80px;
+  }
+  footer i{
+      color:#fff;
+      text-align: center;
+  }
+  #github{
+      margin-left: -5vw;
+      margin-top: 0vh;
+      padding-right: 10px;
+      cursor: pointer;
+  }
+  #github{
+    margin-left: 0vw;
+    margin-top: 0vh;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 900px) {
+    #movie_image {
+        top: 50%;
+        left: 45%;
+        width: 800px;
+    }
+
+    .movie_scroll {
+        top: 0%;
+        left: 10%;
+        width: 800px;
+        height: 300px;
+    }
+    .img-responsive{
+        margin-top: 150px;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+    }
+
+    .recommended_movie {
+        width: 150px;
+        height: 120px;
+        margin-top: 10px;
+    }
+
+}
+
+@media(max-width: 700px) {
+    #movie_image {
+        top: 50%;
+        left: 45%;
+        width: 800px;
+    }
+
+    .movie_scroll {
+        top: 0%;
+        left: 10%;
+        width: 800px;
+        height: 300px;
+    }
+
+    #submit_rating {
+        margin-right: -20px;
+    }
+    #skip{
+        margin-top: 50px;
+        margin-left: 280px; 
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+
+    .recommended_movie {
+        width: 150px;
+        height: 120px;
+        margin-top: 10px;
+    }
+    .main-nav {
+        display: none;
+       }
+
+}
+
+@media(max-width: 500px) {
+    .main_heading{
+        margin-top: -100px;
+    }
+    #movie_image {
+        top: 50%;
+        left: 45%;
+        width: 800px;
+    }
+
+    .movie_scroll {
+        top: 0%;
+        left: 10%;
+        width: 800px;
+        height: 300px;
+    }
+    .img-responsive{
+        margin-top: 150px;
+    }
+    #rating {
+        margin-top: 400px;
+    }
+    #submit_rating {
+        margin-right: -20px;
+    }
+    #skip{
+        margin-top: 50px;
+        margin-left: 200px; 
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    .box a:hover {
+        transition: transform .3s;
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1.2);
+    }
+
+    .recommended_movie {
+        width: 250px;
+        height: 120px;
+        margin-top: 10px;
+    }
+
+
+
+}
+@media(max-width: 900px) {
+
+    header {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
+    }
+  
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+    }
+    .main-nav {
+        display: none;
+       }
+  }
+  
+  @media(max-width: 700px) {
+  
+    header {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
+    }
+    .main-nav {
+        display: none;
+       }
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+  
+    .sub-links ul {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+     
+  }
+  
+  @media(max-width: 500px) {
+  
+    .wrapper {
+      font-size: 15px;
+    }
+  
+    header {
+      margin: 0;
+      padding: 20px 0 0 0;
+      position: static;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: 
+      "nt"    
+      "mn"
+      "sb";
+      text-align: center;
+    }
+  
+    .netflixLogo {
+      max-width: 100%;
+      margin: auto;
+      padding-right: 20px;
+    }
+  
+    .main-nav {
+     display: none;
+    }}
