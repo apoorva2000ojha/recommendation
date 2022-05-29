@@ -14,6 +14,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     line-height: 1.4;
+    overflow-x: hidden;
 }
 
 
@@ -31,7 +32,8 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;  
     color: #fff;
-    height: 45px;
+    height: 80px;
+    z-index:1;
   }
   
   .netflixLogo {
@@ -59,6 +61,7 @@ header {
     grid-area: mn;
     padding: 0 30px 0 0px;
     margin-top: 10px;
+    z-index:1;
   }
   
   .main-nav a {
@@ -131,9 +134,9 @@ header {
   }
 
 #rating {
-    float: center;
+    float: none;
     width: 5 rem;
-    margin-left: 40vwpx;
+    margin-left: 44vwpx;
     margin-top: -7vh;
 }
 
@@ -154,26 +157,26 @@ header {
 
 #rating {
     margin-top: 500px;
-    margin-left: 30vw;
-    width: 300px;
+    margin-left: 32.5vw;
+    width: 460px;
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: center;
     position: relative;
     height: 20px;
 }
-
 #rating>label {
-    float: right;
     display: inline;
     padding: 0;
     margin: 10px;
-    margin-left: 30px;
+    margin-left: 2px;
+    margin-right: 5px;
     position: relative;
-    width: 1.1rem;
+    width: 1rem;
     cursor: pointer;
     color: #fff;
-    font-size: 40px;
+    font-size: 45px;
+    text-align: center;
 }
 
 #rating>label:hover,
@@ -187,18 +190,20 @@ header {
 #rating>input.radio-btn:checked~label:before,
 #rating>input.radio-btn:checked~label:before {
     content: "\2605";
-    position: absolute;
+    position:relative;
     left: 0;
     color: #FFD700;
+    padding-right: 5px;
 }
 
 .options {
-    align-items: center;
+    margin-top: -30px;
+    margin-left: -500px;
 }
 
 #submit_rating {
-    margin-top: 1.5vh;
-    margin-left: 30vw;
+    margin-top: 0vh;
+    margin-left: -10vw;
     margin-right: 40vw;
     cursor: pointer;
     color: #fff;
@@ -218,8 +223,8 @@ header {
 }
 
 #skip {
-    margin-top: 1.5vh;
-    margin-left: 55vw;
+    margin-top: 10vh;
+    margin-left: 50vw;
     margin-right: 37vw;
     cursor: pointer;
     color: #fff;
@@ -227,13 +232,14 @@ header {
     border: none;
     font-weight: 500;
     border-radius: 0.2vw;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     margin-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     background-color: rgba(51, 51, 51, 0.5);
-    white-space: nowrap
+    white-space: nowrap;
+    position: relative;
 }
 
 .main-container {
@@ -249,9 +255,28 @@ header {
 #recommendations_box {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(6, minmax(100px, 1fr));
-}
+    grid-template-columns: repeat(14, minmax(100px, 1fr));
+    margin-top: 20px;
 
+}
+.recomendations_heading{
+    margin-top: 3vh;
+    padding: 20px, 20px, 0px, 0px;
+    color: white;
+    font-size: 3rem;
+    font-weight: 400;
+    padding-bottom: 0.3rem;
+    text-align: left;  
+    margin-bottom: -10vh;
+}
+#recommendation_title{
+color: #fff;
+margin-top: 70px;
+display: grid;
+text-align: left;
+margin-left: -20px;
+font-size: 20px;
+}
 #recommendations_box div {
     transition: transform .3s;
 }
@@ -263,15 +288,30 @@ header {
     transform: scale(1.4);
 }
 
-#recommendations_box div {
+#recommendations_box .img-responsive {
     border-radius: 2px;
+    margin-top: 200px;
+    height: 120px;
+    width: 265px;
+    margin-left:-150px;
+    padding: 0 30px 0 0;
 }
 
 #recommendations {
     width: 50px;
     height: 120px;
-    margin-top: 10px;
+    margin-top: 100px;
 }
+.main-container {
+    padding: 50px;
+  }
+  
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+  }
+
 footer {
     padding: 20px;
     text-align: center;
@@ -315,201 +355,211 @@ footer {
         height: 300px;
     }
     .img-responsive{
-        margin-top: 150px;
+        margin-top: 190px;
+        width:300px;
+        height:300px;
+        margin-left: 0px;
     }
 
     .main-container {
         padding: 10px;
     }
-
-    .box {
+    
+    header {
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "nt nt nt  .  .  . sb . . . "
+        "mn mn mn mn mn mn  mn mn mn mn";
+      }
+    
+      .main-nav {
+          display: none;
+         }
+          
+      .netflixLogo {
+        margin: 0px 0 100px 70px;
+      }
+      .netflixLogo img {
+        height: 250px;
+        margin-top: -110px;
+        margin-left: 89%;
     }
-
-    .recommended_movie {
-        width: 150px;
-        height: 120px;
-        margin-top: 10px;
+      .main-nav {
+       display: none;
+      }
+      #recommendations_box {
+        display: block;
+     }
+     #heading_two{
+        font-size: 30px;
     }
-
-}
-
-@media(max-width: 700px) {
-    #movie_image {
-        top: 50%;
-        left: 45%;
-        width: 800px;
+    #recommendation_title{
+        margin-left: 10px;
     }
-
-    .movie_scroll {
-        top: 0%;
-        left: 10%;
-        width: 800px;
-        height: 300px;
-    }
-
+    #recommendations_box .img-responsive {
+     margin-left: 10px;
+     margin-top: 10px;
+   }
     #submit_rating {
-        margin-right: -20px;
+        margin-right: 20px;
+        margin-left:95px;
     }
     #skip{
-        margin-top: 50px;
-        margin-left: 280px; 
+        margin-top: 120px;
+        margin-left: 617px; 
     }
-
-    .main-container {
-        padding: 10px;
-    }
-
-    .box {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
-    }
-
-    .recommended_movie {
-        width: 150px;
-        height: 120px;
-        margin-top: 10px;
+    #rating {
+        margin-top: 500px;
+        margin-left: 150px;
     }
     .main-nav {
         display: none;
        }
+}
 
+@media(max-width: 700px) {
+    .main_heading{
+        margin-top: 90px;
+        font-size: 30px;
+    }
+#movie_name {
+    font-size: 25px;
+}
+  .img-responsive{
+      margin-top: 00px;
+  }
+    #rating {
+        margin-top: 550px;
+        margin-left: 40px;
+        text-align: center;
+    }
+    #submit_rating {
+        margin-left: 130px;
+    }
+    #skip{
+        margin-top: 130px;
+        margin-left: 550px; 
+    }
+    .options {
+        align-items: center;
+    }
+    .img-responsive{
+        margin-top: 150px;
+        width:300px;
+        height:300px;
+        margin-left: -60px;
+    }
+    .main-nav {
+        display: none;
+       }
+       header {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "nt nt nt  .  .  . sb . . . "
+        "mn mn mn mn mn mn  mn mn mn mn";
+      }
+      .main-nav {
+          display: none;
+         }
+      .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+      }
+    
+      .sub-links ul {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+       
+      .netflixLogo {
+        margin: 0px 0 100px 0px;
+      }
+    
+      .main-nav {
+       display: none;
+      }
+      #recommendations_box {
+        display: block;
+     }
+     #heading_two{
+        font-size: 30px;
+    }
+     #recommendation_title{
+         margin-left: 0px;
+     }
+     #recommendations_box .img-responsive {
+      margin-left: 0px;
+    }
+    .main-nav {
+        display: none;
+       }
 }
 
 @media(max-width: 500px) {
     .main_heading{
-        margin-top: -100px;
-    }
-    #movie_image {
-        top: 50%;
-        left: 45%;
-        width: 800px;
-    }
-
-    .movie_scroll {
-        top: 0%;
-        left: 10%;
-        width: 800px;
-        height: 300px;
+        margin-top: 90px;
+        font-size: 30px;
     }
     .img-responsive{
-        margin-top: 150px;
+        margin-top: 100px;
+        width:300px;
+        height:300px;
+        margin-left: -60px;
     }
     #rating {
-        margin-top: 400px;
+        margin-top: 550px;
+        margin-left: 0px;
+        width:480px
     }
     #submit_rating {
-        margin-right: -20px;
+        margin-left: -30px;
     }
     #skip{
-        margin-top: 50px;
-        margin-left: 200px; 
+        margin-top: 100px;
+        margin-left: 430px; 
+        position: relative;
     }
 
     .main-container {
         padding: 10px;
     }
 
-    .box {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(1, 1fr);
-        text-align: center;
-    }
 
-    .box a:hover {
-        transition: transform .3s;
-        -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-        transform: scale(1.2);
-    }
-
-    .recommended_movie {
-        width: 250px;
-        height: 120px;
-        margin-top: 10px;
-    }
-
-
-
-}
-@media(max-width: 900px) {
-
-    header {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: 
-      "nt nt nt  .  .  . sb . . . "
-      "mn mn mn mn mn mn  mn mn mn mn";
-    }
-  
-    .box {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(4, minmax(100px, 1fr));
-    }
-    .main-nav {
-        display: none;
-       }
-  }
-  
-  @media(max-width: 700px) {
-  
-    header {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas: 
-      "nt nt nt  .  .  . sb . . . "
-      "mn mn mn mn mn mn  mn mn mn mn";
-    }
-    .main-nav {
-        display: none;
-       }
-    .box {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(3, minmax(100px, 1fr));
-    }
-  
-    .sub-links ul {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-     
-  }
-  
-  @media(max-width: 500px) {
-  
     .wrapper {
-      font-size: 15px;
+        font-size: 15px;
+      }
+    
+    
+      .netflixLogo {
+        margin: 0px 0 100px 70px;
+      }
+    
+      .main-nav {
+       display: none;
+      }
+      #recommendations_box {
+        display: block;
+     }
+     #heading_two{
+         font-size: 30px;
+     }
+     #recommendation_title{
+         margin-left: 10px;
+     }
+     #recommendations_box .img-responsive {
+      margin-left: 10px;
+      margin-top: 10px;
     }
-  
-    header {
-      margin: 0;
-      padding: 20px 0 0 0;
-      position: static;
-      display: grid;
-      grid-gap: 20px;
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-areas: 
-      "nt"    
-      "mn"
-      "sb";
-      text-align: center;
+    
     }
+
+
   
-    .netflixLogo {
-      max-width: 100%;
-      margin: auto;
-      padding-right: 20px;
-    }
   
-    .main-nav {
-     display: none;
-    }}
+    

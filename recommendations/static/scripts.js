@@ -5,18 +5,18 @@ window.onload = function () {
 
   function getPoster (film, div) {
       film = film.split('(')[0]
-
+    
      if (film == '') {
 
         $(div).html('<div class="alert"><strong>Oops!</strong> Try adding something into the search field.</div>');
 
       } {
 
-        $(div).html('<div class="alert"><strong>Loading...</strong></div>');
+        $(div).html('<div class="alert"></div>');
 
         $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function (json) {
-        console.log("hello")
-        if (json.results.length > 0) {
+        console.log("hello") 
+        if (json != "Nothing found.") {
             console.log(json);
             $(div).html('<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
           } else {
@@ -34,7 +34,7 @@ window.onload = function () {
     }
 
   function changeMovie() {
-    fetch("/movie")
+    fetch("https://appu0212.pythonanywhere.com/movie")
       .then((response) => response.json())
       .then((data) => {
         document.getElementById('rating_form').elements['star'].value = 1;
@@ -75,14 +75,14 @@ window.onload = function () {
             r = r.substring(1);
             console.log({ratings, r, i});
 
-            fetch(`/recommend?ids=${i}&ratings=${r}`)
+            fetch(`https://appu0212.pythonanywhere.com/recommend?ids=${i}&ratings=${r}`)
             .then((response) => response.json())
             .then((data) => {
-                $('#recommendations_box').html('<h1 style="color:white">Recommendations for you.</h1>');
+                $('#recommendations_box').html('<h1 hidden id="recommendations_heading" style="color:white">Recommendations for you.</h1>');
                 console.log(data)
                 let i = 0;
                 data.titles.forEach(film => {
-                    $('#recommendations_box').append(`<p>${film}</p><div id="recommendation${i}"></div>`)
+                    $('#recommendations_box').append(`<p id="recommendation_title">${film}</p><div id="recommendations${i}"></div>`)
                     getPoster(film, `#recommendations${i++}`)
                 })
             });

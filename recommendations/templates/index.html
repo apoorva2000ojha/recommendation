@@ -5,11 +5,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Movie recommendation system</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'styles.css' %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -20,13 +20,13 @@
     <a id="logo" href="#rating_form"><img src="{% static 'logo.png' %}" alt="Logo Image"></a>
   </div>
   <nav class="main-nav">
-    <a href="#rating_form">Rate Movies</a>
-    <a href="#recommendations_box">Recommended movies</a>
+    <a href="#heading_main">Rate Movies</a>
+    <a href="#heading_two">Recommended movies</a>
   </nav>
 </header>
 <div class="container">
   <div class="rate">
-    <h1 class="main_heading"> &#128543 Rate the following movies out of 5 &#128525</h1>
+    <h1 id="heading_main" class="main_heading"> &#128543 Rate the following movies out of 5 &#128525</h1>
     <div id="fetch">
       <h2 id="movie_name"> </h2>
       <!-- <input  type="number" min=1 max=5 id="rating" /><br> -->
@@ -36,7 +36,7 @@
       <div id="poster">
       </div>
       <div class="txt-center">
-        <form id="rating_form">
+        <form id="rating_form" action="submit">
           <div id="rating">
             <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
             <label for="star5">☆</label>
@@ -48,12 +48,14 @@
             <label for="star2">☆</label>
             <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
             <label for="star1">☆</label>
-            <button id="submit_rating" type="submit">Submit Rating</button>
+            <div class="row">
+            <button id="submit_rating" class="submit_ratings" type="submit">Submit Rating</button>
           </div>
-        </form>
       </div>
       <div class="options">
       <button id="skip">Skip</button>
+    </div>
+  </form>
     </div>
     </div>
     <div id="recommend">
@@ -61,12 +63,16 @@
   </div>
 </div>
 <section class="main-container" >
+  <div id="recommendations_heading">
+    <h1 id="heading_two" class="recomendations_heading" style="text-align: left;">Recommendations for you</h1>
 <div id="recommendations_box">
+
+</div>
 </div>
 </section>
 <footer><div class="footer_icons">
   <a href=""><i style="font-size:40px " class="fa" id="github">&#xf16a;</i></a>
-  <a href=""><i color="white" class="fa fa-github fa-3x" id="youtube"></i></a>
+  <a href="https://github.com/apoorva2000ojha/recommendation"><i color="white" class="fa fa-github fa-3x" id="youtube"></i></a>
   <p style ="color: gray;">Click here for YouTube video and Github repo link</p>
   </div>
 </footer>
