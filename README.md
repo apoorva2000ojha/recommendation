@@ -6,7 +6,10 @@ User Item Rating matrix used in recommender systems Rating Matrix The matrix sho
 Collaborative filtering is a family of algorithms where there are multiple ways to find similar users or items and multiple ways to calculate rating based on ratings of similar users.
 Finding users similar to U who have rated the item I Calculating the rating R based the ratings of users found in the previous step You’ll see each of them in detail in the following sections.
 You can predict that a user’s rating R for an item I will be close to the average of the ratings given to I by the top 5 or top 10 users most similar to U.
-<br><br>
+<br><br
+<h2><strong>Demo</strong></h2>
+<a href="https://www.youtube.com/watch?v=oRVfvXANROg"><img src=""></a>
+
 <h2><strong>Technologies used</strong></h2>
 <li>Python</li>
 <li>Django</li>
@@ -16,6 +19,12 @@ You can predict that a user’s rating R for an item I will be close to the aver
 <li>Python anywhere - to host </li>
 <br><br>
 <h2><strong>How to install and run the project</strong></h2>
+<h3> Clone the repo</h3>
+<code> git clone https://github.com/apoorva2000ojha/recommendation </code>
+<h3>Install Dependencies</h3>
+<code> pip install django django-cors-headers django-import-export scikit-surprise </code>
+<h3>Run the server</h3>
+<code> python manage.py runserver </code>
 <br><br>
 <h2><strong>How to Use the Project</strong></h2>
 To obtain the recommendations the user first needs to rate at least five movies out of 5, 5 being the best 1 being the worst. Once the user rates the movies the app recommends six different movies that he might like, for each time the user rates another movie the recommendations are changed.
