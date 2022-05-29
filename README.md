@@ -8,7 +8,7 @@ Finding users similar to U who have rated the item I Calculating the rating R ba
 You can predict that a user’s rating R for an item I will be close to the average of the ratings given to I by the top 5 or top 10 users most similar to U.
 <br><br
 <h2><strong>Demo</strong></h2>
-<a href="https://www.youtube.com/watch?v=oRVfvXANROg"><img src=""></a>
+<a href="https://youtu.be/PMYakA73QaA"><img src="https://github.com/apoorva2000ojha/recommendation/blob/master/thumbnail.jpg"></a>
 
 <h2><strong>Technologies used</strong></h2>
 <li>Python</li>
@@ -22,9 +22,36 @@ You can predict that a user’s rating R for an item I will be close to the aver
 <h3> Clone the repo</h3>
 <code> git clone https://github.com/apoorva2000ojha/recommendation </code>
 <h3>Install Dependencies</h3>
-<code> pip install django django-cors-headers django-import-export scikit-surprise </code>
+<code> pip install -r requirements.txt </code>
 <h3>Run the server</h3>
 <code> python manage.py runserver </code>
+<br><br>
+<table>
+  <tr>
+    <th>endpoint</th>
+    <th> parameters</th>
+    <th>method</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><code>/</code></td>
+    <td>none</td>
+    <td>GET</td>
+    <td>loads the home page</td>
+  </tr>
+  <tr>
+    <td><code>/movie</code></td>
+    <td>none</td>
+    <td>GET</td>
+    <td>returns a random movie from the database</td>
+  </tr>
+   <tr>
+     <td><code>recommend</code></td>
+    <td><code>ids={comma separated list of ids of the movies rated}&ratings={comma separated ratings}</code></td>
+    <td>GET</td>
+    <td> returns 6 recommendations for the user according to ratings submitted</td>
+  </tr>
+</table>
 <br><br>
 <h2><strong>How to Use the Project</strong></h2>
 To obtain the recommendations the user first needs to rate at least five movies out of 5, 5 being the best 1 being the worst. Once the user rates the movies the app recommends six different movies that he might like, for each time the user rates another movie the recommendations are changed.
